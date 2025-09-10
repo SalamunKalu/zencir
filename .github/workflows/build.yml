@@ -28,16 +28,16 @@ jobs:
       # Dependencies quraşdır
       - name: Flutter pub get
         run: flutter pub get
-        working-directory: flutter-app/zenciri_qirma - minimal
+        working-directory: flutter-app/zenciri_qirma_minimal
 
       # APK yaradılır
       - name: Build APK
         run: flutter build apk --release
-        working-directory: flutter-app/zenciri_qirma - minimal
+        working-directory: flutter-app/zenciri_qirma_minimal
 
       # APK-nı artifacts kimi saxlamaq
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release.apk
-          path: flutter-app/zenciri_qirma - minimal/build/app/outputs/flutter-apk/app-release.apk
+          path: flutter-app/zenciri_qirma_minimal/build/app/outputs/flutter-apk/app-release.apk
