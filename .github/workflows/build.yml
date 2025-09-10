@@ -23,19 +23,21 @@ jobs:
 
       # UnZip et
       - name: Unzip project
-        run: Unzip project.zip -d .
+        run: Unzip project.zip -d flutter-app
 
       # Dependencies quraşdır
       - name: Flutter pub get
         run: flutter pub get
+        working-directory: flutter-app
 
       # APK yaradılır
       - name: Build APK
         run: flutter build apk --release
+        working-directory: flutter-app
 
       # APK-nı artifacts kimi saxlamaq
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
-          path: build/app/outputs/flutter-apk/zencir.apk
+          path: flutter-app/build/app/outputs/flutter-apk/zencir.apk
