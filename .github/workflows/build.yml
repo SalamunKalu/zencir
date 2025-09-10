@@ -23,7 +23,7 @@ jobs:
 
       # UnZip et
       - name: Unzip project
-        run: Unzip project.zip -d flutter-app
+        run: unzip project.zip -d flutter-app
 
       # Dependencies quraşdır
       - name: Flutter pub get
