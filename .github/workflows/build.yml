@@ -21,6 +21,10 @@ jobs:
         with:
           flutter-version: '3.53.3'
 
+      # UnZip et
+      - name: Unzip project
+        run: Unzip project.zip -d .
+
       # Dependencies quraşdır
       - name: Flutter pub get
         run: flutter pub get
